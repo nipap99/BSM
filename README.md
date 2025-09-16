@@ -54,10 +54,44 @@ Each plot shows:
 
 ## Usage
 
-```bash
+``` bash
 # Calculate a single option price
 call_price = black_scholes_merton(100, 100, 1, 0.05, 0.2, 'call')
 put_price = black_scholes_merton(100, 100, 1, 0.05, 0.2, 'put')
 
 print(f"Call Option Price: {call_price:.2f}")
-print(f"Put Option Price: {put_price:.2f}")```
+print(f"Put Option Price: {put_price:.2f}")
+``` 
+## Dependencies
+
+- `numpy` - Numerical computations
+- `matplotlib` - Data visualization  
+- `scipy` - Statistical functions (normal distribution)
+
+Install required packages:
+```bash
+pip install numpy matplotlib scipy
+```
+
+## Example Output
+
+
+The visualization shows how:
+1. **Call option prices** increase with higher stock prices
+2. **Put option prices** decrease with higher stock prices
+3. **Both options** lose value as time to expiration decreases (time decay)
+4. **The relationship between stock price, time, and option premium**
+
+## Applications
+
+- **Option pricing education and research** - Ideal for academic study and understanding Black-Scholes-Merton model fundamentals
+- **Risk management and hedging strategies** - Analyze option price behavior under different market scenarios
+- **Quantitative finance analysis** - Foundation for more complex derivatives pricing models
+- **Visualizing the "Greeks" indirectly** - Observe how Delta, Gamma, Theta, Vega, and Rho affect option prices through 3D surface patterns
+
+## Limitations
+
+- **Assumes constant volatility and risk-free rate** - Real-world volatility fluctuates (volatility smile/skew)
+- **Suitable for European options only** - Cannot price American options with early exercise features
+- **Assumes log-normal distribution of stock prices** - Actual market returns often exhibit fat tails and skewness
+- **No dividend payments considered** - Does not account for dividend-paying underlying assets
